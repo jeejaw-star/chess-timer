@@ -15,6 +15,10 @@ run/main_scene="res://start.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bwoxx2it7wy4w"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

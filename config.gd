@@ -17,6 +17,16 @@ func _ready() -> void:
 	time.value = 300
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func _on_button_pressed() -> void:
+	Global.p1_name = p1.text
+	Global.p2_name = p2.text
+	Global.p3_name = p3.text
+	Global.p4_name = p4.text
+	Global.time = time.value
+	print(Global.p1_name)
+	print(Global.p2_name)
+	print(Global.p3_name)
+	print(Global.p4_name)
+	print(Global.time)
+	get_tree().change_scene_to_file("res://timer.tscn")

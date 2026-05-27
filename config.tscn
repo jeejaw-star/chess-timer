@@ -70,3 +70,21 @@ offset_top = 144.0
 offset_right = 1147.0
 offset_bottom = 213.0
 max_value = 100000000000.0
+
+[node name="Button" type="Button" parent="." unique_id=449067707]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -125.875
+offset_top = -161.75
+offset_right = 125.875
+grow_horizontal = 2
+grow_vertical = 0
+tooltip_text = "Start the timer"
+theme_override_font_sizes/font_size = 80
+text = "Start!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
