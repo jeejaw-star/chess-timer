@@ -16,7 +16,14 @@ func _ready() -> void:
 	color.color = Color.from_hsv(randf(), 1.0, 1.0)
 	time.value = 300
 	
-
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("accept"):
+		Global.p1_name = p1.text
+		Global.p2_name = p2.text
+		Global.p3_name = p3.text
+		Global.p4_name = p4.text
+		Global.time = time.value
+		get_tree().change_scene_to_file("res://timer.tscn")
 
 func _on_button_pressed() -> void:
 	Global.p1_name = p1.text
@@ -24,9 +31,4 @@ func _on_button_pressed() -> void:
 	Global.p3_name = p3.text
 	Global.p4_name = p4.text
 	Global.time = time.value
-	print(Global.p1_name)
-	print(Global.p2_name)
-	print(Global.p3_name)
-	print(Global.p4_name)
-	print(Global.time)
 	get_tree().change_scene_to_file("res://timer.tscn")
