@@ -66,3 +66,7 @@ func _on_p_3_ready_pressed() -> void:
 
 func _on_p_4_ready_pressed() -> void:
 	pause_unpause(%P4_TL, %P1_TL)
+
+
+func _on_quit_pressed() -> void:
+	get_tree().change_scene_to_file("res://start.tscn")

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dvh0doe2qhfuw"]
 
 [ext_resource type="Script" uid="uid://dptw6ttyhfuv" path="res://timer.gd" id="1_qdhxh"]
+[ext_resource type="Texture2D" uid="uid://ciainbcvka2ai" path="res://checkerboard.png" id="2_ye2uk"]
 
 [node name="Timer" type="Control" unique_id=1787679878]
 layout_mode = 3
@@ -11,11 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qdhxh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1162426778]
+[node name="BG" type="TextureRect" parent="." unique_id=995645810]
 layout_mode = 0
 offset_right = 1238.0
 offset_bottom = 853.0
-color = Color(0.023371784, 0.023371786, 0.023371782, 1)
+texture = ExtResource("2_ye2uk")
 
 [node name="P1_TL" type="Timer" parent="." unique_id=586112203]
 unique_name_in_owner = true
@@ -42,10 +43,10 @@ text = "1"
 [node name="P2_Name" type="Label" parent="." unique_id=436337868]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 6.0
-offset_top = 154.0
-offset_right = 325.0
-offset_bottom = 276.0
+offset_left = 7.0
+offset_top = 174.0
+offset_right = 326.0
+offset_bottom = 296.0
 theme_override_colors/font_color = Color(0, 0.63436884, 0.546758, 1)
 theme_override_font_sizes/font_size = 30
 text = "2"
@@ -75,74 +76,84 @@ text = "4"
 [node name="P1_Time" type="Label" parent="." unique_id=1933220101]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 224.0
-offset_top = 10.0
-offset_right = 409.0
-offset_bottom = 67.0
+offset_left = 263.0
+offset_top = 12.0
+offset_right = 448.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0, 0.49814135, 0.43935096, 1)
 text = "P1's Time Left"
 
 [node name="P2_Time" type="Label" parent="." unique_id=1763914724]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 226.0
-offset_top = 160.0
-offset_right = 411.0
-offset_bottom = 217.0
+offset_left = 268.0
+offset_top = 188.0
+offset_right = 453.0
+offset_bottom = 245.0
 theme_override_colors/font_color = Color(0, 0.49814135, 0.43935096, 1)
 text = "P2's Time Left"
 
 [node name="P3_Time" type="Label" parent="." unique_id=1971605724]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 223.0
-offset_top = 393.0
-offset_right = 408.0
-offset_bottom = 450.0
+offset_left = 261.0
+offset_top = 391.0
+offset_right = 446.0
+offset_bottom = 448.0
 theme_override_colors/font_color = Color(0, 0.49814135, 0.43935096, 1)
 text = "P3's Time Left"
 
 [node name="P4_Time" type="Label" parent="." unique_id=98054202]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 232.0
+offset_left = 264.0
 offset_top = 546.0
-offset_right = 417.0
+offset_right = 449.0
 offset_bottom = 603.0
 theme_override_colors/font_color = Color(0, 0.49814135, 0.43935096, 1)
 text = "P4's Time Left"
 
 [node name="P1_ready" type="Button" parent="." unique_id=1045493592]
 layout_mode = 0
-offset_left = 612.0
+offset_left = 593.0
 offset_top = 7.0
-offset_right = 749.0
+offset_right = 730.0
 offset_bottom = 97.0
 text = "Done"
 
 [node name="P2_ready" type="Button" parent="." unique_id=585498005]
 layout_mode = 0
-offset_left = 612.0
-offset_top = 143.0
-offset_right = 749.0
-offset_bottom = 233.0
+offset_left = 586.0
+offset_top = 190.0
+offset_right = 723.0
+offset_bottom = 280.0
 text = "Done"
 
 [node name="P3_ready" type="Button" parent="." unique_id=1897202305]
 layout_mode = 0
-offset_left = 612.0
-offset_top = 378.0
-offset_right = 749.0
-offset_bottom = 468.0
+offset_left = 593.0
+offset_top = 379.0
+offset_right = 730.0
+offset_bottom = 469.0
 text = "Done"
 
 [node name="P4_ready" type="Button" parent="." unique_id=208697417]
 layout_mode = 0
-offset_left = 612.0
-offset_top = 518.0
-offset_right = 749.0
-offset_bottom = 608.0
+offset_left = 600.0
+offset_top = 516.0
+offset_right = 737.0
+offset_bottom = 606.0
 text = "Done"
+
+[node name="Quit" type="Button" parent="." unique_id=1220521954]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 446.0
+offset_right = 1110.0
+offset_bottom = 608.0
+tooltip_text = "Quit and go back to the main screen"
+theme_override_font_sizes/font_size = 50
+text = "Quit"
 
 [connection signal="timeout" from="P1_TL" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="P2_TL" to="." method="_on_timer_timeout"]
@@ -152,3 +163,4 @@ text = "Done"
 [connection signal="pressed" from="P2_ready" to="." method="_on_p_2_ready_pressed"]
 [connection signal="pressed" from="P3_ready" to="." method="_on_p_3_ready_pressed"]
 [connection signal="pressed" from="P4_ready" to="." method="_on_p_4_ready_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
